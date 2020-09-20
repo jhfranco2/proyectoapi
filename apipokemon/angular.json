@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "apipokemon"
+    }
+  },
+  "defaultProject": "apipokemon",
+  "cli": {
+    "analytics": "5d79ccce-ea3d-40a4-a373-f12056339f75"
+  }
 }
