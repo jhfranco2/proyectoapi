@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConexionService } from './Service/conexion.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'apipokemon';
+
+  constructor(
+    private ConexionService:ConexionService 
+  ){
+    
+    this.ConexionService.getConexion().subscribe(resp=>{
+      console.log(resp)
+    })
+  }
 }
