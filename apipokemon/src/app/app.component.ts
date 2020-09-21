@@ -8,14 +8,15 @@ import { ConexionService } from './Service/conexion.service';
 })
 export class AppComponent {
   title = 'ApiPokemon';
-  public pokemon:Array<any>=[]
+  public pokemon: any = [];
   constructor(
-    private ConexionService:ConexionService
+    // tslint:disable-next-line: no-shadowed-variable
+    private ConexionService: ConexionService
   ){
 
-    this.ConexionService.getConexion().subscribe((resp:any)=>{
+    this.ConexionService.getConexion().subscribe((resp: any) => {
 
-      this.pokemon = resp
-    })
+      this.pokemon = resp;
+    });
   }
 }
