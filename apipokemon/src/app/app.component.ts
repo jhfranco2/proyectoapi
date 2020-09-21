@@ -10,11 +10,11 @@ export class AppComponent {
   title = 'ApiPokemon';
   public pokemon:Array<any>=[]
   constructor(
-    private ConexionService:ConexionService 
+    private ConexionService:ConexionService
   ){
-    
+
     this.ConexionService.getConexion().subscribe((resp:any)=>{
-      
+
       this.pokemon = resp
     })
   }
