@@ -8,13 +8,14 @@ import { ConexionService } from './Service/conexion.service';
 })
 export class AppComponent {
   title = 'apipokemon';
-
+  public pokemon:Array<any>=[]
   constructor(
     private ConexionService:ConexionService 
   ){
     
-    this.ConexionService.getConexion().subscribe(resp=>{
-      console.log(resp)
+    this.ConexionService.getConexion().subscribe((resp:any)=>{
+      
+      this.pokemon = resp
     })
   }
 }
