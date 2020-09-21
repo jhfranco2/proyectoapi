@@ -7,7 +7,7 @@ import { ConexionService } from './Service/conexion.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'apipokemon';
+  title = 'ApiPokemon';
   public pokemon:Array<any>=[]
   constructor(
     private ConexionService:ConexionService 
