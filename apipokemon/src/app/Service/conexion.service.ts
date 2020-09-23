@@ -4,16 +4,16 @@ import {HttpClient, HttpHeaderResponse, HttpHeaders} from '@angular/common/http'
   providedIn: 'root'
 })
 export class ConexionService {
-  url = 'https://pokeapi.co/api/v2/pokemon/1/';
+  url = 'https://pokeapi.co/api/v2/pokemon/2/';
   constructor(
     private http: HttpClient
   ) {
     console.log('Servicio pokemon');
    }
-   // tslint:disable-next-line: typedef
+
    getConexion(){
      const header = new HttpHeaders()
-     .set('Type-content', 'aplication/json');
+     .set('Type-content', 'aplication/json')
      return this.http.get(this.url, {
      headers: header
    });
