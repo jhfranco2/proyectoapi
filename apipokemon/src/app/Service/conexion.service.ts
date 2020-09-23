@@ -4,7 +4,7 @@ import {HttpClient, HttpHeaderResponse, HttpHeaders} from '@angular/common/http'
   providedIn: 'root'
 })
 export class ConexionService {
-  url = 'https://pokeapi.co/api/v2/pokemon/1/'
+  url = 'https://pokeapi.co/api/v2/pokemon/2/'
   constructor(
     private http:HttpClient
   ) {

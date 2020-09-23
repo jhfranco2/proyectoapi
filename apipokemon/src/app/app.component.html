@@ -1,4 +1,14 @@
 <app-barra></app-barra>
 <h1>{{pokemon.name}}</h1>
+
+<ul> 
+    <li *ngFor="let pokemon of stats"> 
+        {{ pokemon.stat.name }} 
+        <label >:</label>
+        {{ pokemon.base_stat }} 
+    </li> 
+</ul>
+
 <img src='{{pokemon.sprites.other.dream_world.front_default}}'/>
+
 <router-outlet></router-outlet>

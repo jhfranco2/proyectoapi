@@ -8,7 +8,9 @@ import { ConexionService } from './Service/conexion.service';
 })
 export class AppComponent {
   title = 'apipokemon';
-  public pokemon:Array<any>=[]
+  public pokemon:any
+  public hola:String= "equis";
+  public stats:Array<any>;
   constructor(
     private ConexionService:ConexionService 
   ){
@@ -16,6 +18,8 @@ export class AppComponent {
     this.ConexionService.getConexion().subscribe((resp:any)=>{
       
       this.pokemon = resp
+      this.stats = resp.stats
+      console.log(this.stats)
     })
   }
 }
