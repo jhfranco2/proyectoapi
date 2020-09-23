@@ -12,6 +12,12 @@
         {{ pokemon.base_stat }} 
     </li> 
 </ul>
+<ul> 
+    <li *ngFor="let pokemon of tipo"> 
+        {{ pokemon.type.name}} 
+       
+    </li> 
+</ul>
 
 <img src='{{pokemon.sprites.other.dream_world.front_default}}'/>
 

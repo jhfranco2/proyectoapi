@@ -11,6 +11,7 @@ export class AppComponent {
   public pokemon:any
   public hola:String= "equis";
   public stats:Array<any>;
+  public tipo:Array<any>;
   constructor(
     private ConexionService:ConexionService 
   ){
@@ -19,7 +20,8 @@ export class AppComponent {
       
       this.pokemon = resp
       this.stats = resp.stats
-      console.log(this.stats)
+      this.tipo = resp.types
+      console.log(this.tipo)
     })
   }
 }
