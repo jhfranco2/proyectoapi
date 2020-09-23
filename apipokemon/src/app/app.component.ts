@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'ApiPokemon';
   public pokemon: any = [];
   constructor(
-    // tslint:disable-next-line: no-shadowed-variable
+
     private ConexionService: ConexionService
   ){
 
