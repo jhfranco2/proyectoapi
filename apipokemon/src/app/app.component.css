@@ -1,4 +1,29 @@
-.encabezado{
+.encabezado {
     text-align: center;
     color: blue;
+    margin: 40px auto;
+}
+
+.busqueda {
+    text-align: center;
+    color: rgb(205, 107, 50);
+    margin: 25px auto;
+    padding: 15px;
+    border: solid black 1px;
+}
+
+.barra {
+    margin: 100px;
+    width: 200px;
+    padding: 100px;
+}
+
+.stats {
+    float: right;
+    
+}
+.Imagenes {
+    text-align: center;
+    margin: 40px auto;   
+
 }
