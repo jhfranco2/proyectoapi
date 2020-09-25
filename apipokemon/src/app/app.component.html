@@ -3,11 +3,14 @@
     <h1>Bienvenidos a {{ title }}</h1>
 
 </div>
+<div align="center">
+
+
 <app-barra></app-barra>
-<button>busca tu pokemon</button>
+
 <h1>{{pokemon?.name}}</h1>
 
-<ul>
+<ul class="stats"> 
     <li *ngFor="let pokemon of stats">
         {{ pokemon.stat.name }}
         <label>:</label> {{ pokemon.base_stat }}
@@ -21,5 +24,6 @@
 </ul>
 
 <img src='{{pokemon?.sprites.other.dream_world.front_default}}' />
+</div>
 
 <router-outlet></router-outlet>
