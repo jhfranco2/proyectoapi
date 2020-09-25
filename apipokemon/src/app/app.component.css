@@ -17,7 +17,13 @@
     width: 200px;
     padding: 100px;
 }
+<<<<<<< HEAD
 .stats {
     float: right;
     
+=======
+.Imagenes {
+    text-align: center;
+    margin: 40px auto;   
+>>>>>>> a2a7e3abdc879490b2e23cb800bec2ea7b0d751b
 }
