@@ -1,8 +1,19 @@
 <div class='encabezado'>
-    
+    <img alt="PokéAPI" src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png">
     <h1>Bienvenidos a {{ title }}</h1>
+
 </div>
-<app-barra></app-barra>
+<app-barra class='barra'></app-barra>
+<button class='busqueda'>Busca tu pokemon!</button>
 <h1>{{pokemon.name}}</h1>
-<img src='{{pokemon.sprites.other.dream_world.front_default}}'/>
+
+<ul>
+    <li *ngFor="let pokemon of stats">
+        {{ pokemon.stat.name }}
+        <label>:</label> {{ pokemon.base_stat }}
+    </li>
+</ul>
+
+<img src='{{pokemon.sprites.other.dream_world.front_default}}' />
+
 <router-outlet></router-outlet>
