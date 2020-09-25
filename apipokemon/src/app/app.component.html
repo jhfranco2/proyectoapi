@@ -3,9 +3,9 @@
     <h1>Bienvenidos a {{ title }}</h1>
 
 </div>
-<app-barra class='barra'></app-barra>
-<button class='busqueda'>Busca tu pokemon!</button>
-<h1>{{pokemon.name}}</h1>
+<app-barra></app-barra>
+<button>busca tu pokemon</button>
+<h1>{{pokemon?.name}}</h1>
 
 <ul>
     <li *ngFor="let pokemon of stats">
@@ -13,7 +13,13 @@
         <label>:</label> {{ pokemon.base_stat }}
     </li>
 </ul>
+<ul>
+    <li *ngFor="let pokemon of tipo">
+        {{ pokemon.type.name}}
 
-<img src='{{pokemon.sprites.other.dream_world.front_default}}' />
+    </li>
+</ul>
+
+<img src='{{pokemon?.sprites.other.dream_world.front_default}}' />
 
 <router-outlet></router-outlet>

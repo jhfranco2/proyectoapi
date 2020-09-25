@@ -7,19 +7,34 @@ import { ConexionService } from './Service/conexion.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'apipokemon';
-  public pokemon:any
-  public hola:String= "equis";
-  public stats:Array<any>;
+
+  title = 'ApiPokemon';
+  public pokemon: any;
+  // tslint:disable-next-line: ban-types
+  public hola: String = 'equis';
+  public stats: Array<any>;
+  public tipo: Array<any>;
+
   constructor(
-    private ConexionService:ConexionService
+
+    // tslint:disable-next-line: no-shadowed-variable
+    private ConexionService: ConexionService
   ){
-    
-    this.ConexionService.getConexion().subscribe((resp:any)=>{
-      
-      this.pokemon = resp
-      this.stats = resp.stats
-      console.log(this.stats)
-    })
+
+
+    this.ConexionService.getConexion().subscribe((resp: any) => {
+
+      this.pokemon = resp;
+    });
+
+
+    this.ConexionService.getConexion().subscribe((resp: any) => {
+
+      this.pokemon = resp;
+      this.stats = resp.stats;
+      this.tipo = resp.types;
+      console.log(this.tipo);
+    });
+
   }
 }
