@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PokeServiceService } from 'src/app/services/poke-service.service';
 
 @Component({
   selector: 'app-tarjeta-stadistica',
@@ -7,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TarjetaStadisticaComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private pokeService: PokeServiceService ) { }
+  imgUrl = this.pokeService.imgUrl;
   ngOnInit(): void {
   }
 

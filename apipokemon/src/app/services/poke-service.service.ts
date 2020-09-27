@@ -11,6 +11,7 @@ export class PokeServiceService {
   stats: any[] = [];
   abilities: any[] = [];
   pokemons: any[] = [];
+  imgUrl: any;
   constructor(private http: HttpClient) {}
 
   getPokemon(pokemon: string){
@@ -20,6 +21,7 @@ export class PokeServiceService {
                 console.log(data);
                 console.log(data.name);
                 console.log(this.pokemons);
+                this.imgUrl = data.sprites.other.dream_world.front_default;
 
   });
 }

@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   constructor( private pokeService: PokeServiceService ) { }
 
-  getPokemon(pokemon: string){
+  getPokemon(pokemon: string): void {
    this.pokeService.getPokemon(pokemon);
    console.log(pokemon);
    this.stats = this.pokeService.stats;
