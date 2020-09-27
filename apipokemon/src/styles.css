@@ -1,4 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+    background-color: rgba(180, 180, 180, 0.365);
+}
+
+.poke__logo {
+    height: 80px;
+}
+.poke__ball {
+    max-height: 30px;
+}
+.btn-outline-warning, .btn-outline-warning:hover {
+    color: rgba(17, 17, 188, 0.862);
+    font-weight: bolder;
+}
+
+

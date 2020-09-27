@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-8 mx-auto">
+            <form class="form d-flex justify-content-around">
+                <input class="form-control" type="text" (keyup)="getPokemon(pokemon.value)" placeholder="Escribe el nombre de tu pokemon" #pokemon>
+                <button class="btn btn-outline-warning ml-2">Buscar</button>
+              </form>
+        </div>
+    </div>
+    <div class="row mt-5">
+    <div class="col-6"></div>
+    <div class="col-6">
+        <app-tarjeta-stadistica></app-tarjeta-stadistica>
+    </div>    
+    </div>
+</div>
+
+<!-- <h1>{{pokemon?.name}}</h1>
+
+<ul class="stats"> 
+    <li *ngFor="let pokemon of stats">
+        {{ pokemon.stat.name }}
+        <label>:</label> {{ pokemon.base_stat }}
+    </li>
+</ul>
+<ul>
+    <li *ngFor="let pokemon of tipo">
+        {{ pokemon.type.name}}
+
+    </li>
+</ul>
+
+<img src='{{pokemon.sprites.other.dream_world.front_default}}' /> -->

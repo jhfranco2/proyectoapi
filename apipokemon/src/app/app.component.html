@@ -1,29 +1,7 @@
-<div class='encabezado'>
-    <img alt="PokéAPI" src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png">
-    <h1>Bienvenidos a {{ title }}</h1>
+<div class="container-fluid p-0">
 
+    <app-header></app-header>
+    <app-home></app-home>
+    <app-footer></app-footer>
 </div>
-<div align="center">
-
-
-<app-barra></app-barra>
-
-<h1>{{pokemon?.name}}</h1>
-
-<ul class="stats"> 
-    <li *ngFor="let pokemon of stats">
-        {{ pokemon.stat.name }}
-        <label>:</label> {{ pokemon.base_stat }}
-    </li>
-</ul>
-<ul>
-    <li *ngFor="let pokemon of tipo">
-        {{ pokemon.type.name}}
-
-    </li>
-</ul>
-
-<img src='{{pokemon.sprites.other.dream_world.front_default}}' />
-</div>
-
 <router-outlet></router-outlet>
