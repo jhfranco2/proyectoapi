@@ -6,10 +6,10 @@
         <img [src]="imgUrl" alt="Eevee" class="card__image">   
       </div>
       <figcaption class="card__caption">
-        <h1 class="card__name">{{ pokemon.name }}</h1>
+        <h1 class="card__name">{{ pokemon?.name }}</h1>
     
         <h3 class="card__type">
-          {{ pokemon.types[0].type.name}}
+          {{ pokemon?.types[0].type.name}}
         </h3>
     
         <table class="card__stats">
