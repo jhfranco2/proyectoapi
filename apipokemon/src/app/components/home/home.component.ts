@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, NgModule } from '@angular/core';
 import { PokeServiceService } from 'src/app/services/poke-service.service';
 
 @Component({
@@ -9,16 +9,29 @@ import { PokeServiceService } from 'src/app/services/poke-service.service';
 export class HomeComponent implements OnInit {
 
   stats: any;
+  imgUrl: any;
+  pokeType: any;
+  pokemon: any[] = [];
+  termino: string;
 
-  constructor( private pokeService: PokeServiceService ) { }
+  constructor( private pokeService: PokeServiceService ) {
 
-  getPokemon(pokemon: string): void {
-   this.pokeService.getPokemon(pokemon);
-   console.log(pokemon);
-   this.stats = this.pokeService.stats;
+  }
+
+
+  getPokemon(termino: string) {
+    if (termino.length > 0 && termino !== undefined) {
+        this.termino = termino;
+        return this.termino;
+    }
   }
 
   ngOnInit(): void {
+    console.log(this.termino);
+  }
+  ngOnChanges(): void {
+
+    this.getPokemon(this.termino);
   }
 
 }

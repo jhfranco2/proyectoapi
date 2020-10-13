@@ -3,14 +3,13 @@
 
     <figure class="card card--normal">
       <div class="card__image-container">
-        <img src="https://cdn.bulbagarden.net/upload/thumb/e/e2/133Eevee.png/1200px-133Eevee.png" alt="Eevee" class="card__image">   
+        <img [src]="imgUrl" alt="Eevee" class="card__image">   
       </div>
-      
       <figcaption class="card__caption">
-        <h1 class="card__name">Eevee</h1>
+        <h1 class="card__name">{{ pokemon.name }}</h1>
     
         <h3 class="card__type">
-          normal
+          {{ pokemon.types[0].type.name}}
         </h3>
     
         <table class="card__stats">

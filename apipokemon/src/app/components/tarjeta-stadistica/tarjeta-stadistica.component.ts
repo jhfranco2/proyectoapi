@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PokeServiceService } from 'src/app/services/poke-service.service';
 
 @Component({
@@ -8,9 +8,27 @@ import { PokeServiceService } from 'src/app/services/poke-service.service';
 })
 export class TarjetaStadisticaComponent implements OnInit {
 
-  constructor(private pokeService: PokeServiceService ) { }
-  imgUrl = this.pokeService.imgUrl;
+  @Input() termino: string;
+  pokemon: any;
+  imgUrl: any;
+
+
+
+  constructor(private pokeService: PokeServiceService ) {
+
+   }
+
+   getPokeCard() {
+     this.pokeService.getPokemon(this.termino)
+      .subscribe(data => {
+        this.pokemon = data;
+        this.imgUrl = data.sprites.other.dream_world.front_default;
+        console.log(this.pokemon);
+      });
+   }
   ngOnInit(): void {
+    console.log("desde el card");
+    this.getPokeCard();
   }
 
 }
