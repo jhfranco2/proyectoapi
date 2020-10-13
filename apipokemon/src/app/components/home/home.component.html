@@ -2,17 +2,13 @@
     <div class="row mt-5">
         <div class="col-8 mx-auto">
             <div class="form d-flex justify-content-around">
-<<<<<<< HEAD
-                <input class="form-control" type="text"  placeholder="Escribe el nombre de tu pokemon o Id" #pokemon>
-=======
-                <input class="form-control" type="text"  placeholder="Escribe el nombre de tu pokemon"  #pokemon required>
->>>>>>> 1906701a08094c765c00da6b4a53b130494c667a
+                <input class="form-control" type="text"  placeholder="Escribe el nombre de tu pokemon" (keyup.enter)="getPokemon(pokemon.value)"  #pokemon required>
                 <button class="btn btn-outline-warning ml-2" (click)="getPokemon(pokemon.value)">Buscar</button>
             </div>
         </div>
     </div>
-    <div class="row mt-5">
-    <div class="mb-5">
+    <div class="row mt-5 mx-auto">
+    <div class="col-auto mb-5 mx-auto">
         <div class="tarjeta" *ngIf="termino">
             <app-tarjeta-stadistica [termino]="termino"></app-tarjeta-stadistica>
         </div>

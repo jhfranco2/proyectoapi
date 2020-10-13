@@ -1,3 +1,4 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit, Input } from '@angular/core';
 import { PokeServiceService } from 'src/app/services/poke-service.service';
 
@@ -13,10 +14,9 @@ export class TarjetaStadisticaComponent {
   imgUrl: any;
   error: any;
   stats: any;
-  abilities: any;
   loading: boolean;
   imagesUrl: any[] = [];
-  
+
 
   constructor(private pokeService: PokeServiceService ) {
 
@@ -28,30 +28,28 @@ export class TarjetaStadisticaComponent {
         if (Object.prototype.hasOwnProperty.call(object, key)) {
           const element = object[key];
           if (element !== null) {
-            this.imagesUrl.push({ 'src': element })
+            this.imagesUrl.push({ path: element });
           }
-          console.log(element)
-          
         }
       }
-      console.log(this.imagesUrl.slice(0,4))
+
     }
 
    getPokeCard() {
      this.error = null;
      this.loading = true;
+     this.imagesUrl = [];
      this.pokeService.getPokemon(this.termino)
       .subscribe(data => {
-       
-        this.pokemon = data;        
+
+        this.pokemon = data;
         this.stats = data.stats;
         this.pushImages(data.sprites);
-        this.abilities = data.abilities;
         this.imgUrl = data.sprites.other.dream_world.front_default;
         console.log(this.pokemon);
         setTimeout(() => {
           this.loading = false;
-        }, 2500);
+        }, 2000);
       },
       err => this.error = err.status
       );

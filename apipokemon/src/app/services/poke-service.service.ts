@@ -17,20 +17,12 @@ export class PokeServiceService {
   baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
   constructor(private http: HttpClient) {}
 
-/*   getPokemon(pokemon: string){
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
-              .subscribe((data: any) => data );
-} */
+
 getPokemon(termino: string) {
-  
+
   return this.http.get(`${this.baseUrl}${termino}`)
   .pipe( map( (data: any) => data ));
 }
 
-getPokemonStats(termino: string) {
-
-  return this.http.get(`${this.baseUrl}${termino}`)
-  .pipe( map( (data: any) => data.stats ));
- }
 
 }
