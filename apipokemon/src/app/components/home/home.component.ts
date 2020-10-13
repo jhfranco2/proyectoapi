@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit, NgModule } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { PokeServiceService } from 'src/app/services/poke-service.service';
 
 @Component({

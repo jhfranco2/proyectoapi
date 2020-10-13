@@ -6,10 +6,13 @@ body {
 }
 
 .poke__logo {
-    height: 80px;
+    height: 100px;
+    position: relative;
+    padding-top: 0px;
 }
 .poke__ball {
-    max-height: 30px;
+    max-height: 60px;
+    position: fixed;
 }
 .btn-outline-warning, .btn-outline-warning:hover {
     color: rgba(17, 17, 188, 0.862);
