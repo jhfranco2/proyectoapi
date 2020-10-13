@@ -18,8 +18,7 @@ h5 {
 .card {
   display: inline-block;
   width: 320px;
-  padding: 1em;
-  border-radius: 15px;
+  padding: 1em; 
   margin: 10px;
   background: #ddd;
   text-align: left;
@@ -49,6 +48,7 @@ h5 {
   color: #ffffff;
   text-transform: uppercase;
   font-family: "Open Sans Condensed", "Open Sans", helvetica, sans-serif;
+  border-radius: 10px;
   letter-spacing: 0.1em;
   padding: 0.25em;
   line-height: 1;
@@ -57,16 +57,17 @@ h5 {
 }
 .card__label {
   font-size: 12px;
-  text-transform: uppercase;
+  text-transform: uppercase;  
   font-weight: bold;
   display: block;
-  margin-bottom: 3px;
+  margin-bottom: 5px;
 }
 .card__name {
   font-family: "Open Sans Condensed", "Open Sans", helvetica, sans-serif;
   text-align: center;
   text-transform: uppercase;
   color: black;
+  border-radius: 10px;
   background-color: #fdbb2d;
   font-size: 1.5em;
   font-weight: 700;
@@ -90,12 +91,12 @@ h5 {
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 .card__ability {
-  margin-top: 1em;
+  margin-top: 2em;
   -webkit-box-flex: 1;
-          flex: 1 0;
+  flex: 1 0;
 }
 .card--normal {
   background: linear-gradient(110deg, #fdbb2d 0%, #3a1c71 100%);
@@ -103,6 +104,8 @@ h5 {
 }
 .card--normal .card__type {
   background-color: #c08a53;
+  color: whitesmoke;
+  border-radius: 5px;
 }
 .card__stats td {
     font-weight: bolder;

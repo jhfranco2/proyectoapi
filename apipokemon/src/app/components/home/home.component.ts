@@ -29,9 +29,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.termino);
   }
-  ngOnChanges(): void {
+  ngOnChanges(){
 
-    this.getPokemon(this.termino);
+    return this.getPokemon(this.termino);
   }
 
 }
