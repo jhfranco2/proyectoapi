@@ -21,13 +21,13 @@ export class HomeComponent implements OnInit {
 
   getPokemon(termino: string) {
     if (termino.length > 0 && termino !== undefined) {
-        this.termino = termino;
+        this.termino = termino.toLowerCase();
+        console.log(termino);
         return this.termino;
     }
   }
 
   ngOnInit(): void {
-    console.log(this.termino);
   }
   ngOnChanges(): void {
 

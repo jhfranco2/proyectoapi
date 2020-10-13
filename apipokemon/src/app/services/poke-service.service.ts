@@ -22,7 +22,7 @@ export class PokeServiceService {
               .subscribe((data: any) => data );
 } */
 getPokemon(termino: string) {
-
+  
   return this.http.get(`${this.baseUrl}${termino}`)
   .pipe( map( (data: any) => data ));
 }
