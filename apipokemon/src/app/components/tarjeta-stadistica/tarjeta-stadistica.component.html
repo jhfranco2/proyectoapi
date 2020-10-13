@@ -1,56 +1,62 @@
+<div class="d-flex justify-content-center" *ngIf="loading && !error">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Buscando...</span>
+  </div>
+</div>
+<div class="tex-center row alert alert-danger" *ngIf="error">
+  <p  class="tex-center" >Pokemon no encontrado</p>
+</div>
 
-<div id="cards mb-5">  
 
-    <figure class="card card--normal">
-      <div class="card__image-container">
-        <img [src]="imgUrl" alt="Eevee" class="card__image">   
+<div class="row">
+  <div class="col-6" *ngIf="!error && !loading">
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" *ngFor="let img of imagesUrl; let i = index">
+        <img [src]="img.src" class="d-block w-75 fluid" alt="...">
       </div>
-      <figcaption class="card__caption">
-        <h1 class="card__name">{{ pokemon?.name }}</h1>
-    
-        <h3 class="card__type">
-          {{ pokemon?.types[0].type.name}}
-        </h3>
-    
-        <table class="card__stats">
-          <tbody><tr>
-            <th>HP</th>
-            <td>55</td>
-          </tr>
-          <tr>
-            <th>Ataque</th>
-            <td>55</td>
-          </tr>
-          
-          <tr>
-            <th>Defensa</th>
-            <td>50</td>
-          </tr>
-    
-          <tr>
-            <th>Ataque Especial</th>
-            <td>45</td>
-          </tr>
-          <tr>
-            <th>Defensa Especial</th>
-            <td>65</td>
-          </tr>
-          <tr>
-            <th>Velocidad</th>  
-            <td>55</td>
-          </tr>
-        </tbody></table>
-        
-        <div class="card__abilities">
-          <h4 class="card__ability">
-            <span class="card__label">Habilidad</span>
-            Run Away
-          </h4>
-          <h4 class="card__ability">
-            <span class="card__label">Habilidad Oculta</span>
-            Anticipation
-          </h4>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  </div>
+
+<div class="col-6">
+  <div id="cards mb-5" *ngIf="!error && !loading">  
+
+      <figure class="card card--normal  mx-auto">
+        <div class="card__image-container">
+          <img [src]="imgUrl" alt="Eevee" class="card__image">   
         </div>
-      </figcaption>
-    </figure>
+        <figcaption class="card__caption">
+          <h1 class="card__name">{{ pokemon.name }}</h1>
       
+          <h3 class="card__type">
+            {{ pokemon.types[0].type.name}}
+          </h3>
+      
+          <table class="card__stats">
+            <tbody>
+            <tr *ngFor="let item of stats">
+              <th>{{ item.stat.name }}</th>
+              <td>{{ item.base_stat }}</td>
+            </tr>
+          </tbody></table>
+          
+          <div class="card__abilities">
+            <h4 class="card__ability" *ngFor="let item of abilities | slice:0:2;">
+              <span class="card__label">Habilidad</span>
+              {{ item.ability.name }}
+            </h4>
+          </div>
+        </figcaption>
+      </figure>
+    </div>      
+  </div>
+</div>
